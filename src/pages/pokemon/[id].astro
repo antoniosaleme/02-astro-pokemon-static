@@ -1,8 +1,13 @@
 ---
 import type { GetStaticPaths } from 'astro';
-import type { Pokemon } from '../../interfaces/pokemon';
-import MainLayout from '../../layout/MainLayout.astro';
-import PokemonCard from '../../components/pokemons/PokemonCard.astro';
+
+// path relativo
+// import PokemonCard from '../../components/pokemons/PokemonCard.astro';
+// path absoluto
+// import PokemonCard from 'src/components/pokemons/PokemonCard.astro';
+// path alias
+import PokemonCard from '@components/pokemons/PokemonCard.astro';
+import MainLayout from '@layout/MainLayout.astro';
 
 export const getStaticPaths = (async () => {
   const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
