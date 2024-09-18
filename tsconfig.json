@@ -6,7 +6,8 @@
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
       "@interfaces/*": ["src/interfaces/*"],
-      "@layout/*": ["src/layout/*"]
+      "@layout/*": ["src/layout/*"],
+      "@constant/*": ["src/constant/*"]
     }
   }
 }
