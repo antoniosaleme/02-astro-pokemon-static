@@ -12,3 +12,5 @@ npm create astro@latest -- --template minimal
 transition:name={`${name}-image`}
 ```
 
+[Pagination](https://docs.astro.build/en/guides/pagination/)
+
