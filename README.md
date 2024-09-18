@@ -12,5 +12,7 @@ npm create astro@latest -- --template minimal
 transition:name={`${name}-image`}
 ```
 
+[new view transition](https://astro.build/blog/future-of-astro-zero-js-view-transitions/?tw)
+
 [Pagination](https://docs.astro.build/en/guides/pagination/)
 
