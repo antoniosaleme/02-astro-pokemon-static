@@ -1,6 +1,7 @@
 ---
 // este view transitions es para la transicion de la pagina
 // import { ViewTransitions } from 'astro:transitions';
+import NavBar from '@components/shared/NavBar.astro';
 import { SIDE_INFO } from '@constant/side-info';
 interface Props {
   title: string;
@@ -42,8 +43,9 @@ const {
       }
     </style>
   </head>
-  <body class="bg-slate-800 text-slate-100 m-auto max-w-3xl">
-    <main class="mt-10">
+  <body class="bg-slate-800 text-slate-100">
+    <NavBar />
+    <main class="mt-10 m-auto max-w-3xl">
       <slot />
     </main>
   </body><style>
