@@ -3,6 +3,7 @@ import type { GetStaticPaths } from 'astro';
 import PokemonCard from '@components/pokemons/PokemonCard.astro';
 import MainLayout from '@layout/MainLayout.astro';
 import type { PokemonListResponse } from '@interfaces/pokemon-list-response';
+import Title from '@components/shared/Title.astro';
 
 export const getStaticPaths = (async () => {
   const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
@@ -29,9 +30,9 @@ const title = `Pokemon -#${id} ${name}`;
   image={imageSrc}
 >
   <section class="mt-10 mx-10 flex flex-col justify-center items-center">
-    <div>
-      <a href="/">Home</a>
-      <h1 class="text-3xl mb-2 capitalize">Pokemon {name}</h1>
+    <div class="mb-2">
+      <button onclick="history.back()" class="text-blue-500">Regresar</button>
+      <Title>{name}</Title>
     </div>
     <audio controls>
       <source src={audioSrc} type="audio/ogg" />

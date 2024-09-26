@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from 'astro';
 // Codigo Server side only - momento de contruccion BUILD TIME
 import PokemonCard from '@components/pokemons/PokemonCard.astro';
+import Title from '@components/shared/Title.astro';
 import MainLayout from '@layout/MainLayout.astro';
 import type { PokemonListResponse } from '@interfaces/pokemon-list-response';
 
@@ -18,8 +19,7 @@ const title = 'Pokemon static | Home';
 ---
 
 <MainLayout title={title}>
-  <h1 class="text-3xl mb-2">Listado de Pokemons</h1>
-  <hr />
+  <Title>Listado de Pokemons - paginado</Title>
   <section class="flex mt-10 gap-4 items-center">
     <a
       class:list={[

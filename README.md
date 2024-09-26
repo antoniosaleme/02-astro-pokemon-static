@@ -16,3 +16,8 @@ transition:name={`${name}-image`}
 
 [Pagination](https://docs.astro.build/en/guides/pagination/)
 
+cosas q me llamaron la atencion:
+
+```
+<button onclick="history.back()" class="text-blue-500">Regresar</button>
+```
