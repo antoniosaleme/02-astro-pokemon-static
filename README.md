@@ -18,6 +18,19 @@ transition:name={`${name}-image`}
 
 cosas q me llamaron la atencion:
 
-```
+```ts
+// regresa a la pagina anterior
 <button onclick="history.back()" class="text-blue-500">Regresar</button>
+
+// causa parpadeo
+#btn-favorite {
+  @apply hover:animate-pulse;
+}
 ```
+
+
+
+
+````bash
+https://www.creative-tim.com/twcomponents/component/simple-navbar-3
+https://www.astroicon.dev/getting-started/

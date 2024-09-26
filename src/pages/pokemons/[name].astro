@@ -5,6 +5,8 @@ import MainLayout from '@layout/MainLayout.astro';
 import type { PokemonListResponse } from '@interfaces/pokemon-list-response';
 import Title from '@components/shared/Title.astro';
 
+import { Icon } from 'astro-icon/components';
+
 export const getStaticPaths = (async () => {
   const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
   const { results } = (await res.json()) as PokemonListResponse;
@@ -30,9 +32,15 @@ const title = `Pokemon -#${id} ${name}`;
   image={imageSrc}
 >
   <section class="mt-10 mx-10 flex flex-col justify-center items-center">
-    <div class="mb-2">
-      <button onclick="history.back()" class="text-blue-500">Regresar</button>
-      <Title>{name}</Title>
+    <div class="flex flex-row">
+      <div class="mb-2">
+        <button onclick="history.back()" class="text-blue-500">Regresar</button>
+        <Title>{name}</Title>
+      </div>
+      <button id="btn-favorite" class="ml-4">
+        <Icon class="hidden" name="heart-fill" size={50} />
+        <Icon name="heart-light" size={50} />
+      </button>
     </div>
     <audio controls>
       <source src={audioSrc} type="audio/ogg" />
@@ -45,5 +53,9 @@ const title = `Pokemon -#${id} ${name}`;
 <style>
   a {
     @apply text-blue-500 hover:underline;
+  }
+
+  #btn-favorite {
+    @apply hover:animate-pulse;
   }
 </style>
