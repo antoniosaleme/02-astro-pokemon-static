@@ -37,7 +37,7 @@ const title = `Pokemon -#${id} ${name}`;
         <button onclick="history.back()" class="text-blue-500">Regresar</button>
         <Title>{name}</Title>
       </div>
-      <button id="btn-favorite" class="ml-4">
+      <button id="btn-favorite" class="ml-4" data-name={name} data-id={id}>
         <Icon class="hidden" name="heart-fill" size={50} />
         <Icon name="heart-light" size={50} />
       </button>
@@ -49,6 +49,28 @@ const title = `Pokemon -#${id} ${name}`;
   </section>
   <PokemonCard name={name} url={url} isBig />
 </MainLayout>
+
+<script>
+  interface FavoritePokemon {
+    name: string;
+    id: number;
+  }
+
+  document.addEventListener('astro:page-load', () => {
+    const btnFavorite = document.querySelector(
+      '#btn-favorite'
+    ) as HTMLButtonElement;
+
+    if (!btnFavorite) return;
+
+    const name = btnFavorite.dataset.name; // el dataset es una funcion de HTML que permite acceder a los atributos data-*
+    const id = btnFavorite.dataset.id;
+
+    btnFavorite.addEventListener('click', () => {
+      console.log('click', name, id);
+    });
+  });
+</script>
 
 <style>
   a {
